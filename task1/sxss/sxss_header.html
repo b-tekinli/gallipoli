@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SXSS HEADER</title>
+  </head>
+  <body>
+    <h1>Logs Page</h1>
+    <ul id="logsList" class="logs"></ul>
+
+    <script>
+      const logsList = document.getElementById("logsList");
+
+      const logHeaders = [{ userAgent: navigator.userAgent }];
+
+      localStorage.setItem("logs", JSON.stringify(logHeaders));
+
+      function loadLogs() {
+        logsList.innerHTML = "";
+        const logs = JSON.parse(localStorage.getItem("logs"));
+        logs.forEach((log) => {
+          logsList.innerHTML += `<li class="log">${log.userAgent}</li>`;
+        });
+      }
+
+      window.onload = loadLogs;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SXSS POST</title>
+  </head>
+  <body>
+    <h1>Message Board</h1>
+    <form id="postForm">
+      <label for="message">Post a message:</label>
+      <input type="text" id="message" name="message" />
+      <button type="submit">Post</button>
+    </form>
+
+    <ul id="postsList" class="posts"></ul>
+
+    <script>
+      const postsList = document.getElementById("postsList");
+
+      document
+        .getElementById("postForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const message = document.getElementById("message").value;
+          if (message) {
+            localStorage.setItem(Date.now(), message); // Message is stored
+            loadPosts();
+          }
+        });
+
+      function loadPosts() {
+        postsList.innerHTML = "";
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          const value = localStorage.getItem(key);
+          postsList.innerHTML += `<li class="post">${value}</li>`;
+        }
+      }
+
+      window.onload = loadPosts;
+    </script>
+  </body>
+</html>

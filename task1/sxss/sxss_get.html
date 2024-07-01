@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SXSS GET</title>
+  </head>
+  <body>
+    <h1>Comments Page</h1>
+    <form id="commentForm">
+      <label for="comment">Leave a comment:</label>
+      <input type="text" id="comment" name="comment" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <ul id="commentsList" class="comments"></ul>
+
+    <script>
+      const commentsList = document.getElementById("commentsList");
+
+      document
+        .getElementById("commentForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const comment = document.getElementById("comment").value;
+          if (comment) {
+            localStorage.setItem(Date.now(), comment);
+            loadComments();
+          }
+        });
+
+      function loadComments() {
+        commentsList.innerHTML = "";
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          const value = localStorage.getItem(key);
+          commentsList.innerHTML += `<li class="comment">${value}</li>`;
+        }
+      }
+
+      window.onload = loadComments;
+    </script>
+  </body>
+</html>

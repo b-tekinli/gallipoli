@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RXSS HEADER</title>
+  </head>
+  <body>
+    <h1>Welcome Page</h1>
+    <div id="welcomeMessage"></div>
+
+    <script>
+      const userAgent = navigator.userAgent;
+      
+      document.getElementById(
+        "welcomeMessage"
+      ).innerHTML = `<p>Your User-Agent is: ${userAgent}</p>`;
+    </script>
+  </body>
+</html>

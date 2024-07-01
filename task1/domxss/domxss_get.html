@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOMXSS GET</title>
+  </head>
+  <body>
+    <h1>Search Page</h1>
+    <form method="get" action="javascript:void(0);">
+      <label for="q">Search:</label>
+      <input type="text" id="q" name="q" />
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="searchResults"></div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("q")) {
+        const q = params.get("q");
+
+        document.getElementById(
+          "searchResults"
+        ).innerHTML = `You searched for: ${q}`;
+      }
+    </script>
+  </body>
+</html>

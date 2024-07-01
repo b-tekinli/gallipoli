@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SudosuZany</title>
+
+    <style>
+      .rotate-180 {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 p-8">
+    <h1 class="text-3xl font-bold text-red-800 text-center mt-3 mb-12">
+      Hello Gallipoli World!
+    </h1>
+
+    <!-- TASKS START -->
+    <div class="max-w-lg mx-auto">
+      <div class="bg-white rounded-lg shadow p-4">
+        <h2 class="text-xl font-bold mb-4">Tasklar</h2>
+
+        <!-- TASK 1 START -->
+        <div x-data="{ open: false }" class="border rounded-md my-3">
+          <div
+            class="flex justify-between items-center p-4 cursor-pointer bg-gray-200"
+            @click="open = !open"
+          >
+            <span
+              ><i><b>Task1:</b></i> XSS Saldırıları</span
+            >
+            <svg
+              :class="{ 'rotate-180': open }"
+              class="w-5 h-5 transition-transform"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+
+          <div
+            x-show="open"
+            class="pl-4 pr-4 pt-2 pb-2 bg-gray-50 border-t"
+            x-transition
+          >
+            <ul class="space-y-2">
+              <li
+                class="pl-2 border-l-4 border-blue-500 flex justify-between items-center"
+              >
+                RXSS
+                <div class="space-x-2">
+                  <a
+                    href="/task1/rxss/rxss_post.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >POST</a
+                  >
+                  <a
+                    href="/task1/rxss/rxss_get.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >GET</a
+                  >
+                  <a
+                    href="/task1/rxss/rxss_header.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >HEADER</a
+                  >
+                </div>
+              </li>
+              <li
+                class="pl-2 border-l-4 border-blue-500 flex justify-between items-center"
+              >
+                SXSS
+                <div class="space-x-2">
+                  <a
+                    href="/task1/sxss/sxss_post.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >POST</a
+                  >
+                  <a
+                    href="/task1/sxss/sxss_get.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >GET
+                  </a>
+                  <a
+                    href="/task1/sxss/sxss_header.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >HEADER
+                  </a>
+                </div>
+              </li>
+              <li
+                class="pl-2 border-l-4 border-blue-500 flex justify-between items-center"
+              >
+                DOMXSS
+                <div class="space-x-2">
+                  <a
+                    href="/task1/domxss/domxss_post.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >POST</a
+                  >
+                  <a
+                    href="/task1/domxss/domxss_get.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >GET
+                  </a>
+                  <a
+                    href="/task1/domxss/domxss_header.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >HEADER
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- TASK 1 END -->
+
+        <!-- TASK 2 START -->
+        <!-- <div x-data="{ open: false }" class="border rounded-md my-3">
+          <div
+            class="flex justify-between items-center p-4 cursor-pointer bg-gray-200"
+            @click="open = !open"
+          >
+            <span
+              ><i><b>Task1:</b></i> XSS Saldırıları</span
+            >
+            <svg
+              :class="{ 'rotate-180': open }"
+              class="w-5 h-5 transition-transform"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+
+          <div
+            x-show="open"
+            class="pl-4 pr-4 pt-2 pb-2 bg-gray-50 border-t"
+            x-transition
+          >
+            <ul class="space-y-2">
+              <li
+                class="pl-2 border-l-4 border-blue-500 flex justify-between items-center"
+              >
+                RXSS
+                <div class="space-x-2">
+                  <a
+                    href="/task1/rxss/rxss_post.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >POST</a
+                  >
+                  <a
+                    href="/task1/rxss/rxss_get.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >GET</a
+                  >
+                  <a
+                    href="/task1/rxss/rxss_header.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >HEADER</a
+                  >
+                </div>
+              </li>
+              <li
+                class="pl-2 border-l-4 border-blue-500 flex justify-between items-center"
+              >
+                SXSS
+                <div class="space-x-2">
+                  <a
+                    href="/task1/sxss/sxss_post.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >POST</a
+                  >
+                  <a
+                    href="/task1/sxss/sxss_get.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >GET
+                  </a>
+                  <a
+                    href="/task1/sxss/sxss_header.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >HEADER
+                  </a>
+                </div>
+              </li>
+              <li
+                class="pl-2 border-l-4 border-blue-500 flex justify-between items-center"
+              >
+                DOMXSS
+                <div class="space-x-2">
+                  <a
+                    href="/task1/domxss/domxss_post.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >POST</a
+                  >
+                  <a
+                    href="/task1/domxss/domxss_get.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >GET
+                  </a>
+                  <a
+                    href="/task1/domxss/domxss_header.html"
+                    class="text-purple-800 hover:text-blue-700"
+                    >HEADER
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div> -->
+        <!-- TASK 2 END -->
+      </div>
+    </div>
+    <!-- TASKS END -->
+
+    <!-- FOOTER -->
+    <footer
+      class="absolute bottom-0 right-0 left-0 flex justify-center items-end py-4"
+    >
+      <h5><b>Author:</b> <i>sudosuzroot, zanysarea</i></h5>
+    </footer>
+
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOMXSS POST</title>
+  </head>
+  <body>
+    <h1>Message Page</h1>
+    <form id="messageForm">
+      <label for="message">Enter your message:</label>
+      <input type="text" id="message" name="message" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="messages"></div>
+
+    <script>
+      document
+        .getElementById("messageForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const message = document.getElementById("message").value;
+
+          document.getElementById("messages").innerHTML = `Message: ${message}`;
+        });
+    </script>
+  </body>
+</html>

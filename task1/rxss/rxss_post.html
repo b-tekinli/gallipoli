@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RXSS POST</title>
+  </head>
+  <body>
+    <h1>Search Page</h1>
+    <form method="post" id="searchForm">
+        <label for="q">Search:</label>
+        <input type="text" id="q" name="q">
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const q = formData.get('q');
+            document.getElementById('result').innerHTML = `<p>You searched for: ${q}</p>`;
+        });
+    </script>
+  </body>
+</html>
