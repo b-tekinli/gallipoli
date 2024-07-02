@@ -20,7 +20,8 @@
             event.preventDefault();
             const formData = new FormData(this);
             const q = formData.get('q');
-            document.getElementById('result').innerHTML = `<p>You searched for: ${q}</p>`;
+
+            document.getElementById('result').innerHTML = `You searched for: ${q}`;
         });
     </script>
   </body>
