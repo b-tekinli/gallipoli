@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>XSS Test Cases</title>
+  </head>
+  <body
+    class="my-12 flex flex-col justify-center items-center"
+    onload="alert('XSS!')"
+  >
+    <h1>XSS Test Cases - Event Handlers</h1>
+
+    <img class="my-6" src="invalid-image" onerror="alert('XSS!')" />
+
+    <div
+      class="border w-36 h-36"
+      style="background: url('invalid-url')"
+      onload="alert('XSS!')"
+    ></div>
+
+    <iframe class="" src="javascript:alert('XSS!')">iframe</iframe>
+
+    <div
+      class="bg-red-500 text-white px-3 py-2 rounded-xl my-4"
+      onmouseover="alert('XSS!')"
+    >
+      Fareyi üzerinde gezdir
+    </div>
+
+    <button
+      class="bg-purple-400 text-white px-3 py-2 rounded-xl"
+      onclick="alert('XSS!')"
+    >
+      Tıkla
+    </button>
+
+    <script>
+      alert("XSS!");
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
