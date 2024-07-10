@@ -9,7 +9,7 @@ header('Content-Type: text/html');
     <title>XSS Test Cases</title>
 </head>
 <body>
-    <h1>XSS Test Cases</h1>
+    <h1>Protokoller ve HTML Tagleri</h1>
 
     <!-- img tag -->
     <?php
